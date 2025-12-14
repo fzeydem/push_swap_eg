@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_quick.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fatmdemi <fatmdemi@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/12 11:23:33 by fatmdemi          #+#    #+#             */
+/*   Updated: 2025/12/14 18:30:56 by fatmdemi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	push_chunks(t_stack *a, t_stack *b, int chunk)
@@ -11,12 +23,12 @@ static void	push_chunks(t_stack *a, t_stack *b, int chunk)
 		{
 			op_pb(a, b);
 			if (b->top->index < target - (chunk / 2))
-				op_rb(b, 1);
+				op_rb(b);
 			if (b->size == target)
 				target += chunk;
 		}
 		else
-			op_ra(a, 1);
+			op_ra(a);
 	}
 }
 
@@ -25,6 +37,7 @@ static int	locate_extreme(t_node *node, int *len, int is_max)
 	int	pos;
 	int	best_idx;
 	int	cur_pos;
+
 	pos = 0;
 	cur_pos = 0;
 	*len = 0;
@@ -61,9 +74,9 @@ static void	push_max_to_a(t_stack *a, t_stack *b)
 	while (steps > 0)
 	{
 		if (up)
-			op_rb(b, 1);
+			op_rb(b);
 		else
-			op_rrb(b, 1);
+			op_rrb(b);
 		steps--;
 	}
 	op_pa(a, b);
@@ -84,14 +97,16 @@ static void	sort_five(t_stack *a, t_stack *b)
 		if (!up)
 			steps = len - min_pos;
 		while (steps-- > 0)
+		{
 			if (up)
-				op_ra(a, 1);
+				op_ra(a);
 			else
-				op_rra(a, 1);
+				op_rra(a);
+		}
 		op_pb(a, b);
 	}
 	sort_small_a(a, a->size);
-	if (b->size)
+	if (b->size > 0)
 		sort_small_b(a, b, b->size);
 }
 

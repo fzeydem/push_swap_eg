@@ -6,7 +6,7 @@
 /*   By: fatmdemi <fatmdemi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 20:56:43 by fatmdemi          #+#    #+#             */
-/*   Updated: 2025/12/10 20:56:46 by fatmdemi         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:29:39 by fatmdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,16 @@ static void	rotate(t_stack *stack)
 	first->next = NULL;
 }
 
-void	op_ra(t_stack *a, int print)
+void	op_ra(t_stack *a)
 {
 	rotate(a);
-	if (print)
-		write(1, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
-void	op_rb(t_stack *b, int print)
+void	op_rb(t_stack *b)
 {
 	rotate(b);
-	if (print)
-		write(1, "rb\n", 3);
+	write(1, "rb\n", 3);
 }
 
 void	op_rr(t_stack *a, t_stack *b)

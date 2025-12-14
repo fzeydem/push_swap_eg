@@ -6,7 +6,7 @@
 /*   By: fatmdemi <fatmdemi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 20:56:59 by fatmdemi          #+#    #+#             */
-/*   Updated: 2025/12/10 20:57:01 by fatmdemi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:39:11 by fatmdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	add_value(t_stack *a, const char *str)
 	int		ok;
 	long	val;
 
-	val = ps_atol(str, &ok);
+	val = ft_atol(str, &ok);
 	if (!ok || contains_value(a, (int)val))
 		return (0);
 	append_node(a, ps_new_node((int)val));

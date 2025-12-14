@@ -6,21 +6,11 @@
 /*   By: fatmdemi <fatmdemi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 20:57:55 by fatmdemi          #+#    #+#             */
-/*   Updated: 2025/12/10 20:58:07 by fatmdemi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:38:49 by fatmdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ps_strlen(const char *s)
-{
-	int	len;
-
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
-}
 
 void	*ps_calloc(size_t count, size_t size)
 {
@@ -52,7 +42,7 @@ static int	read_sign(const char **str)
 	return (sign);
 }
 
-long	ps_atol(const char *str, int *ok)
+long	ft_atol(const char *str, int *ok)
 {
 	int		sign;
 	long	res;

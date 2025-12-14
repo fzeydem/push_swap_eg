@@ -31,18 +31,16 @@ static void	reverse_rotate(t_stack *stack)
 	stack->top = last;
 }
 
-void	op_rra(t_stack *a, int print)
+void	op_rra(t_stack *a)
 {
 	reverse_rotate(a);
-	if (print)
-		write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
-void	op_rrb(t_stack *b, int print)
+void	op_rrb(t_stack *b)
 {
 	reverse_rotate(b);
-	if (print)
-		write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	op_rrr(t_stack *a, t_stack *b)

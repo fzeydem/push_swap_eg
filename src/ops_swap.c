@@ -26,18 +26,16 @@ static void	swap(t_stack *stack)
 	stack->top = second;
 }
 
-void	op_sa(t_stack *a, int print)
+void	op_sa(t_stack *a)
 {
 	swap(a);
-	if (print)
-		write(1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
-void	op_sb(t_stack *b, int print)
+void	op_sb(t_stack *b)
 {
 	swap(b);
-	if (print)
-		write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 }
 
 void	op_ss(t_stack *a, t_stack *b)
