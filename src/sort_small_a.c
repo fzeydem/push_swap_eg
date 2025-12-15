@@ -6,7 +6,7 @@
 /*   By: fatmdemi <fatmdemi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 20:57:24 by fatmdemi          #+#    #+#             */
-/*   Updated: 2025/12/10 20:57:27 by fatmdemi         ###   ########.fr       */
+/*   Updated: 2025/12/15 20:15:44 by fatmdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	sort_two_a(t_stack *a)
 {
-		if (a->top->index > a->top->next->index)
-			op_sa(a);
+	if (a->top->index > a->top->next->index)
+		op_sa(a);
 }
 
 static void	sort_three_a(t_stack *a)
